@@ -1,5 +1,5 @@
-import PropTypes from 'prop-types'
 import { ControlPanel, Logo } from './components'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 const Discription = styled.div`
