@@ -61,11 +61,11 @@ const RegistrationContainer = ({ className }) => {
 				return
 			}
 			dispatch(setUser(res))
+			sessionStorage.setItem('userData', JSON.stringify(res))
 		})
 	}
 
-	const formError =
-		errors?.login?.message || errors?.password?.message || errors?.passcheck?.message
+	const formError = errors?.login?.message || errors?.password?.message || errors?.passcheck?.message
 	const errorMessage = formError || serverError
 
 	if (roleId !== ROLE.GUEST) {
