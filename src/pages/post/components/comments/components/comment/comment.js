@@ -1,8 +1,27 @@
 import { Icon } from '../../../../../../components'
+import { useDispatch } from 'react-redux'
+import { CLOSE_MODAL, openModal, removeCommentAsync } from '../../../../../../actions'
+import { useServerRequest } from '../../../../../../hooks'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-const CommentContainer = ({ className, author, publishedAt, content }) => {
+const CommentContainer = ({ className, postId, id, author, publishedAt, content }) => {
+	const dispatch = useDispatch()
+	const requestServer = useServerRequest()
+
+	const onCommentRemove = (id) => {
+		dispatch(
+			openModal({
+				text: 'Удалить комментарий?',
+				onConfirm: () => {
+					dispatch(removeCommentAsync(requestServer, postId, id))
+					dispatch(CLOSE_MODAL)
+				},
+				onCancel: () => dispatch(CLOSE_MODAL)
+			})
+		)
+	}
+
 	return (
 		<div className={className}>
 			<div className="comment">
@@ -18,7 +37,7 @@ const CommentContainer = ({ className, author, publishedAt, content }) => {
 				</div>
 				<div className="comment-text">{content}</div>
 			</div>
-			<Icon id="fa-trash-o" size="21px" margin="0 0 0 10px" />
+			<Icon id="fa-trash-o" size="21px" margin="0 0 0 10px" onClick={() => onCommentRemove(id)} />
 		</div>
 	)
 }
@@ -53,5 +72,6 @@ CommentContainer.propTypes = {
 	id: PropTypes.number,
 	author: PropTypes.string,
 	publishedAt: PropTypes.string,
-	content: PropTypes.string
+	content: PropTypes.string,
+	postId: PropTypes.string
 }
