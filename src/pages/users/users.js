@@ -15,17 +15,15 @@ const UsersContainer = ({ className }) => {
 	const requestServer = useServerRequest()
 
 	useEffect(() => {
-		Promise.all([requestServer('fetchUsers'), requestServer('fetchRoles')]).then(
-			([usersRes, rolesRes]) => {
-				if (usersRes.error || rolesRes.error) {
-					setErrorMessage(usersRes.error || rolesRes.error)
-					return
-				}
-
-				setUsers(usersRes.res)
-				setRoles(rolesRes.res)
+		Promise.all([requestServer('fetchUsers'), requestServer('fetchRoles')]).then(([usersRes, rolesRes]) => {
+			if (usersRes.error || rolesRes.error) {
+				setErrorMessage(usersRes.error || rolesRes.error)
+				return
 			}
-		)
+
+			setUsers(usersRes.res)
+			setRoles(rolesRes.res)
+		})
 	}, [requestServer, shouldUpdateUserList])
 
 	const onUserRemove = (userId) => {

@@ -5,15 +5,7 @@ import { useServerRequest } from '../../../../hooks'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-const UserRowContainer = ({
-	className,
-	login,
-	id,
-	registeredAt,
-	roleId: userRoleId,
-	roles,
-	onUserRemove
-}) => {
+const UserRowContainer = ({ className, login, id, registeredAt, roleId: userRoleId, roles, onUserRemove }) => {
 	const [initialRoleId, setInitialRoleId] = useState(userRoleId)
 	const [selectedRoleId, setSelectedRoleId] = useState(userRoleId)
 	const requestServer = useServerRequest()
