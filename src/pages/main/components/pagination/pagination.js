@@ -37,6 +37,7 @@ export const Pagination = styled(PaginationContainer)`
 
 	& .current-page {
 		border: 1px solid #000;
+		margin: 0 5px;
 		width: 100%;
 		height: 32px;
 		text-align: center;

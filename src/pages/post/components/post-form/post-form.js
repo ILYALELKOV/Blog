@@ -43,7 +43,7 @@ const PostFormContainer = ({ className, post: { id, title, imageUrl, content, pu
 				id={id}
 				publishedAt={publishedAt}
 				margin="20px 0"
-				editButton={<Icon id="fa-floppy-o" size="21px" onClick={onSave} />}
+				editButton={<Icon id="fa-floppy-o" size="21px" onClick={onSave} margin="0 10px 0 0" />}
 			/>
 			<div ref={contentRef} contentEditable={true} suppressContentEditableWarning={true} className="post-text">
 				{content}

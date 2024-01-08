@@ -123,9 +123,30 @@
     {
       "author_id": "001",
       "post_id": "002",
-      "published_at": "2061-03-01 21:31",
-      "content": "Второй комментарий\n",
+      "published_at": "2043-07-20 21:30",
+      "content": "wefwe",
       "id": 2
+    },
+    {
+      "author_id": "001",
+      "post_id": "002",
+      "published_at": "2060-05-03 19:07",
+      "content": "gwegwegw",
+      "id": 3
+    },
+    {
+      "author_id": "001",
+      "post_id": "002",
+      "published_at": "2033-06-09 22:42",
+      "content": "cwecwecwe",
+      "id": 4
+    },
+    {
+      "author_id": "001",
+      "post_id": "002",
+      "published_at": "2040-08-30 23:59",
+      "content": "wegrnhrty rhthrt",
+      "id": 5
     }
   ],
   "sessions": [
@@ -205,6 +226,28 @@
         "roleId": 0
       },
       "id": 7
+    },
+    {
+      "hash": "0.83338683480405006953617430554004386067390441894531",
+      "user": {
+        "id": "002",
+        "password": "qwerty123",
+        "login": "anton2",
+        "registeredAt": "2050-09-22",
+        "roleId": 1
+      },
+      "id": 8
+    },
+    {
+      "hash": "0.75361773174718549306305703794350847601890563964844",
+      "user": {
+        "id": "001",
+        "password": "qwerty123",
+        "login": "anton",
+        "registeredAt": "2050-09-22",
+        "roleId": 0
+      },
+      "id": 9
     }
   ]
 }
